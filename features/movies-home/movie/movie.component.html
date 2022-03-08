@@ -1,0 +1,16 @@
+<div class="flex-fill">
+  <div class="card" style="width: 18rem">
+    <img
+      class="card-img-top"
+      src="https://image.tmdb.org/t/p/w500{{ movie.backdrop_path }}"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.title }}</h5>
+      <p class="card-text">{{ movie.overview }}</p>
+      <button class="btn btn-info" routerLink="/movie/{{ movie.id }}">
+        Dettaglio "Film"
+      </button>
+    </div>
+  </div>
+</div>
