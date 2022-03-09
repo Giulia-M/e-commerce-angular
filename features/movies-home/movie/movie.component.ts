@@ -9,7 +9,6 @@ import { Movies } from 'src/app/models/movies';
 })
 export class MovieComponent implements OnInit {
   @Input('moviesTopRated') movie: Movies;
-  // @Input() img: string = '';
 
   movies: Movies[];
 
