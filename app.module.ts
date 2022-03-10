@@ -28,6 +28,7 @@ import { NuovoProductComponent } from './features/nuovo-product/nuovo-product.co
 
 import { MoviesHomeModule } from './features/movies-home/movies-home.module';
 import { MovieDetailComponent } from './features/movie-detail/movie-detail.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { MovieDetailComponent } from './features/movie-detail/movie-detail.compo
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     MoviesHomeModule,
+    BrowserAnimationsModule,
   ],
 
   providers: [],

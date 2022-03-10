@@ -10,7 +10,10 @@
       <p class="card-text">
         {{ movie.overview | mySplit: 100:true }}
       </p>
-      <button class="btn btn-info" routerLink="/movie/{{ movie.id }}">
+      <button
+        class="btn btn-info underline--magical"
+        routerLink="/movie/{{ movie.id }}"
+      >
         Dettaglio "Film"
       </button>
     </div>
