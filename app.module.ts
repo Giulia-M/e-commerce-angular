@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CatalogModule } from './features/catalog/catalog.module';
 import { LoginModule } from './features/login/login.module';
 import { ContactsModule } from './features/contacts/contacts.module';
@@ -29,7 +29,13 @@ import { NuovoProductComponent } from './features/nuovo-product/nuovo-product.co
 import { MoviesHomeModule } from './features/movies-home/movies-home.module';
 import { MovieDetailComponent } from './features/movie-detail/movie-detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { LoaderInterceptorService } from './core/services/loader-interceptor.service';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoadingSpinnerComponent,
     NuovoProductComponent,
     MovieDetailComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,9 +67,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireDatabaseModule,
     MoviesHomeModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
   ],
 
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

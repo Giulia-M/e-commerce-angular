@@ -8,11 +8,7 @@ import { Product } from 'src/app/models/product';
 import { CarrelloService } from '../../services/carrello.service';
 import { DataStorageService } from '../../services/data-storage.service';
 import { ThemeService } from '../../services/theme.service';
-import {
-  BreakpointObserver,
-  Breakpoints,
-  BreakpointState,
-} from '@angular/cdk/layout';
+import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
 @Component({

@@ -16,7 +16,7 @@ export class CatalogComponent implements OnInit {
 
   active!: Product;
   constructor(
-    private productService: ProductService,
+    public productService: ProductService,
     private cart: CarrelloService
   ) {
     this.products = [];

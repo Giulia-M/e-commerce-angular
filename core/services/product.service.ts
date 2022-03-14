@@ -35,5 +35,23 @@ export class ProductService {
     );
   }
 
+  /*
+  devices: Product[] = [];
+
+  addNewProduct(data: Product) {
+    console.log(data);
+    this.devices.push(data);
+  }
+
+  getProducts() {
+    this.http.get<Product[]>('http://localhost:3000/devices').subscribe({
+      next: (devices) => {
+        console.log(devices);
+        this.devices = devices;
+      },
+    });
+  }
+*/
+
   private products: Product[] = [];
 }
