@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { LoaderComponent } from '../shared/loader/loader.component';
+
 @NgModule({
   declarations: [NavbarComponent, ToolbarComponent],
   exports: [NavbarComponent],

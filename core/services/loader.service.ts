@@ -5,24 +5,17 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class LoaderService {
-  /*
-  isLoading = new Subject<boolean>();
-
-  constructor() {}
-
-  show() {
-    this.isLoading.next(true);
-  }
-
-  hide() {
-    this.isLoading.next(false);
-  }
-  */
+  //BEHAVIORSUBJECT = serve ad ascoltare il valore dello stato di caricamento dello spinner. true mostrerà lo spinner, false nasconderà lo spinner.
   loadingSub: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   /**
-   * Contains in-progress loading requests
+   * Questa mappa deve contenere solo richieste http in corso.
+   * string = url
+   * boolean = true o false
    */
   loadingMap: Map<string, boolean> = new Map<string, boolean>();
+
+  // Questo metodo accetta 2 parametri, lo stato di caricamento (booleano) e un URL
   /**
   Imposta il valore della proprietà loadingSub in base a quanto segue:
     * - Se il caricamento è true, aggiungi l'URL fornito a loadingMap con un valore true, imposta il valore loadingSub su true

@@ -3,9 +3,9 @@
     <div class="alert alert-danger" *ngIf="error">
       <p>{{ error }}</p>
     </div>
-    <div *ngIf="isLoading" class="text-center">
+    <!-- <div *ngIf="isLoading" class="text-center">
       <app-loading-spinner></app-loading-spinner>
-    </div>
+    </div> -->
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
       <div class="form-group" *ngIf="isRegister">
         <label for="name">Nome</label>
@@ -62,7 +62,7 @@
           class="btn btn-primary my_btn"
           [disabled]="!authForm.valid"
         >
-          {{ isLoginMode ? "Login" : "Sign Up" }}
+          {{ isLoginMode ? 'Login' : 'Sign Up' }}
         </button>
 
         <button
@@ -70,7 +70,7 @@
           class="btn btn-primary my_btn"
           (click)="onSwitchMode()"
         >
-          Switch to {{ isLoginMode ? "Sign Up " : "Login" }}
+          Switch to {{ isLoginMode ? 'Sign Up ' : 'Login' }}
         </button>
       </div>
     </form>
